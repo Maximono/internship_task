@@ -9,7 +9,8 @@ module Institution
     end
 
     def set_student_knowledge(student)
-      # TODO: Implementation is needed
+      knowledge = Person::Consciousness::Knowledge.new(rand(1..10))
+      student.set_knowledge(knowledge)
     end
 
     def add_student(student)
