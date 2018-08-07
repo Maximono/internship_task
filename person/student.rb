@@ -1,8 +1,10 @@
 module Person
   class Student
 
+    attr_reader :name
+
     def initialize(name)
-      # TODO: Implementation is needed
+      @name = name
     end
 
     def set_knowledge(knowledge)
