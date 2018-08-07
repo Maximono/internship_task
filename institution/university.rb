@@ -1,8 +1,11 @@
 module Institution
   class University
 
+    attr_reader :name, :students
+
     def initialize(name)
-      # TODO: Implementation is needed
+      @name = name
+      @students = []
     end
 
     def set_student_knowledge(student)
@@ -10,7 +13,8 @@ module Institution
     end
 
     def add_student(student)
-      # TODO: Implementation is needed
+      return unless student.is_a?(Person::Student)
+      @students << (student)
     end
   end
 end
