@@ -2,8 +2,10 @@ module Person
   module Consciousness
     class Knowledge
 
+      attr_reader :level
+
       def initialize(level)
-        # TODO: Implementation is needed
+        @level = level
       end
     end
   end
