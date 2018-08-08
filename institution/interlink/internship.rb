@@ -2,19 +2,20 @@ module Institution
   module Interlink
     class Internship
 
-      attr_reader :name
+      attr_reader :name, :students
 
       def initialize(name)
         @name = name
+        @students = []
       end
 
       def set_student(student)
-        # TODO: Implementation is needed
+        return unless student.is_a?(Person::Student)
+        @students << student if student.knowledge.level > student.university.average_knowledge_level
       end
 
       def get_students()
-        # TODO: Implementation is needed
-        return "Andrew Maslenko\nJulia Veselkina\n"
+        students.map(&:name).join("\n") + "\n"
       end
     end
   end

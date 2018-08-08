@@ -12,6 +12,8 @@ class Application
     university.add_student(Person::Student.new('Maria Perechrest'))
 
     internship = Institution::Interlink::Internship.new('Interlink')
+    university.students.each {|student| internship.set_student(student)}
+
     puts("List of internship's students:")
     puts(internship.get_students)
   end
