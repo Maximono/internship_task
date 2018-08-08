@@ -15,6 +15,7 @@ module Institution
 
     def add_student(student)
       return unless student.is_a?(Person::Student)
+      student.set_university(self)
       @students << (student)
     end
   end
