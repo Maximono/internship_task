@@ -15,8 +15,17 @@ module Institution
 
     def add_student(student)
       return unless student.is_a?(Person::Student)
+
       student.set_university(self)
+      set_student_knowledge(student)
+
       @students << (student)
+    end
+
+    def average_knowledge_level
+      return 0 if students.empty?
+      knowledge_sum = students.inject(0) { |sum, stud| sum + stud.knowledge.level }
+      knowledge_sum / students.size
     end
   end
 end
