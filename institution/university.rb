@@ -3,9 +3,10 @@ module Institution
 
     attr_reader :name, :students
 
-    def initialize(name)
+    # University can receive array of students from outside during initialization state
+    def initialize(name, students = [])
       @name = name
-      @students = []
+      @students = students
     end
 
     def set_student_knowledge(student)
