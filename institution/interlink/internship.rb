@@ -2,8 +2,10 @@ module Institution
   module Interlink
     class Internship
 
+      attr_reader :name
+
       def initialize(name)
-        # TODO: Implementation is needed
+        @name = name
       end
 
       def set_student(student)
